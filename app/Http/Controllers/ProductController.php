@@ -23,7 +23,7 @@ class ProductController extends Controller
      */
     public function index(): Response
     {
-        $products = Product::all();
+        $products = Product::query()->paginate(5);
         return Inertia::render('Product/ProductIndexComponent', ['products' => $products]);
     }
 

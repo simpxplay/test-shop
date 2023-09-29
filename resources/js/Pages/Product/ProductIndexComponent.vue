@@ -3,6 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {Head, useForm, Link} from '@inertiajs/vue3';
 import DangerButton from '@/Components/DangerButton.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+import PaginationComponent from "@/Components/PaginationComponent.vue";
 
 const props = defineProps({
     products: {
@@ -10,7 +11,6 @@ const props = defineProps({
         default: () => ({}),
     }
 })
-
 const form = useForm({});
 
 const destroy = (product) => {
@@ -56,7 +56,7 @@ const destroy = (product) => {
                     </thead>
                     <tbody>
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                        v-for="product in products"
+                        v-for="product in products.data"
                         :key="product.id">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ product.id }}
@@ -82,6 +82,7 @@ const destroy = (product) => {
                     </tr>
                     </tbody>
                 </table>
+                <pagination-component :links="products.links"></pagination-component>
             </div>
         </template>
     </AuthenticatedLayout>
