@@ -9,14 +9,14 @@
 
 ## Setup
 
- git clone https://github.com/simpxplay/test-shop.git
- cd test-shop
- composer install
- cp .env.example .env
- php artisan key:generate
- Create database and insert database configs to .env
- php artisan migrate
- npm install
- npm run dev
- In another terminal run command:
- php artisan serve
+ <p>git clone https://github.com/simpxplay/test-shop.git</p>
+ <p>cd test-shop</p>
+ <p>composer install</p>
+ <p>cp .env.example .env</p>
+ <p>php artisan key:generate</p>
+ <p>Create database and insert database configs to .env</p>
+ <p>php artisan migrate</p>
+ <p>npm install</p>
+ <p>npm run dev</p>
+ <p>In another terminal run command:</p>
+ <p>php artisan serve</p>
